@@ -6,11 +6,18 @@ const cors = require('cors');
 const items = require('./routes/api/items');
 
 app.use('/api/items', items);
+
 app.use(cors({origin: true, credentials: true}));
+
 app.get('/', (req, res) => res.send('Hello world!'));
 
 
-const conn_str = 'mongodb+srv://tjwaller0328:epicDatabasePassword852@cluster0.jozq0wm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
+
+
+
+
+const conn_str = '';
 mongoose.set('strictQuery', false);
 mongoose.connect(conn_str).then(() => {
     app.listen(port, () => console.log(`Server running on port ${port}`));
